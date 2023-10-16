@@ -16,3 +16,63 @@ The ft_printf function takes a format string as an argument, where format specif
 Furthermore, ft_printf provides a variety of format specifiers for integers, strings, characters, pointers, and even numbers in different bases, such as hexadecimal, enabling detailed formatting of the output.
 
 It is an essential tool for displaying information in an organized and understandable manner for users during program execution. Widely used for debugging, displaying results, and user interaction, it has become an indispensable component of programming tasks.
+
+<h2>Supported conversions</h2>
+
+| Format specifier  | Description |
+| :--------------:  | :------------- |
+| %                 | prints a '%'.                   |
+| c                 | prints a single character.      |
+| s                 | prints a string.                |
+| p                 | prints an implementation-defined character sequence defining a pointer address. |
+| d or i            | prints a signed integer to decimal representation.|
+| u                 | prints a unsigned integer to decimal representation. |
+| x or X            | prints a unsigned integer to hexadecimal representation in lowercase (x) or uppercase(X). |
+
+<h2>Usage</h2>
+
+<h3>Requirements:</h3>
+
+This project needs cc compiler.
+
+<h3>Instructions:</h3>
+
+•Clone the repository
+
+```
+git clone https://github.com/debsalbornoz/ft_printf.git
+```
+
+•To compile the library run: "make" and to use in your code include the header
+
+```
+#include "ft_printf.h"
+```
+
+•Compile the library with your program and execute
+
+```
+cc - Wall -Wextra -Werror your_program.c libftprintf.a && ./your_program
+```
+
+• Here is an simple example of how to use the function: 
+
+```
+#include "ft_printf.h"
+
+int main(void)
+{
+ char test[14] = "Hello world!\n";
+
+ ft_printf("%s", test);
+}
+```
+
+The output:
+
+```
+Hello world!
+```
+
+
+
