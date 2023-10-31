@@ -12,25 +12,31 @@
 
 #include "ft_printf.h"
 
-int	ft_putnbr(long n)
+int	ft_putnbr(long int n)
 {
-	char	c;
+	char	c;  // Variable to store digits as characters
 
-	if (n == -2147483648)
+	if (n == -2147483648)  // Handle special case for INT_MIN
 	{
-		write(1, "-2147483648", 11);
+		write(1, "-2147483648", 11);  // Print the constant string
 		return ;
 	}
-	c = n % 10 + '0';
-	if (n < 0)
+
+	c = n % 10 + '0';  // Convert the last digit to a character
+	if (n < 0)  // If the number is negative, print the negative sign and negate n
 	{
 		write(1, "-", 1);
 		n = -n;
-		c = n % 10 + '0';
+		c = n % 10 + '0';  // Update the character representation of the last digit
 	}
-	if (n >= 10)
+
+	if (n >= 10)  // Recursively print the remaining digits
 	{
 		ft_putnbr(n / 10);
 	}
-	write(1, &c, 1);
+	
+	write(1, &c, 1);  // Print the current digit
 }
+
+
+
