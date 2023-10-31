@@ -14,24 +14,26 @@
 
 int	count_hexadecimal(unsigned long int nbr)
 {
-	unsigned int	i;
+	unsigned int	i;  // Counter for digits
 
 	i = 1;
-	while (nbr > 15)
+	while (nbr > 15)  // While the number is greater than 15 (hexadecimal digit limit)
 	{
-		nbr = nbr / 16;
-		i++;
+		nbr = nbr / 16;  // Divide by 16 to get the next digit
+		i++;  // Increment digit count
 	}
-	return (i);
+	return (i);  // Return the total number of digits in hexadecimal representation
 }
 
 int	ft_hexadecimal(unsigned int n, char *base, unsigned int base_len)
 {
-	char	c;
+	char	c;  // Variable to store hexadecimal digit as character
 
-	if (n >= base_len)
+	if (n >= base_len)  // If the number is greater than or equal to base length, recurse to print the higher digits
 		ft_hexadecimal(n / base_len, base, base_len);
-	c = base[n % base_len];
-	write(1, &c, 1);
-	return (count_hexadecimal(n));
+
+	c = base[n % base_len];  // Get the current digit in hexadecimal representation
+	write(1, &c, 1);  // Print the digit
+	return (count_hexadecimal(n));  // Return the total number of characters printed in hexadecimal format
 }
+
