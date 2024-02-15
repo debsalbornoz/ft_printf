@@ -9,14 +9,19 @@
 </div>
 
 <h2>About</h2> 
+
 Ft_printf is a project from the 42 programming school where the printf function is recreated entirely from scratch. It is utilized to display formatted data on the standard output, typically on the console.
-The ft_printf function takes a format string as an argument, where format specifiers begin with %. For instance, %d is used for integers, and %s is used for strings. The corresponding values for the variables or data to be displayed are provided after the format string.
+
+
+The ft_printf function takes a format string as an argument, where format specifiers begin with %. The corresponding values for the variables or data to be displayed are provided after the format string.
 
 Furthermore, ft_printf provides a variety of format specifiers for integers, strings, characters, pointers, and even numbers in different bases, such as hexadecimal, enabling detailed formatting of the output.
 
 It is an essential tool for displaying information in an organized and understandable manner for users during program execution. Widely used for debugging, displaying results, and user interaction, it has become an indispensable component of programming tasks.
 
+
 <h2>Supported conversions</h2>
+
 
 | Format specifier  | Description |
 | :--------------:  | :------------- |
