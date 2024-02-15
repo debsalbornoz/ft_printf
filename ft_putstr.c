@@ -12,20 +12,21 @@
 
 #include "ft_printf.h"
 
+// Prints the given string to the terminal and returns its length
 int	ft_putstr(char *str)
 {
 	int	i;
 
 	i = 0;
-	if (str == NULL)  // If the input string is NULL, print "(null)"
+	if (str == NULL) 
 	{
 		write(1, "(null)", 6);
-		return (6);  // Return 6, indicating 6 characters have been printed
+		return (6);
 	}
-	while (str[i] != '\0')  // Loop through the string until the null terminator is encountered
+	while (str[i] != '\0')
 	{
-		ft_putchar(str[i]);  // Print each character of the string
-		i++;  // Move to the next character
+		ft_putchar(str[i]);
+		i++; 
 	}
-	return (i);  // Return the total number of characters printed in the string
+	return (i);
 }

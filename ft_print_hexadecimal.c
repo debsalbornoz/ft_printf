@@ -12,28 +12,30 @@
 
 #include "ft_printf.h"
 
+// Counts the number of hexadecimal digits in an unsigned long integer
+
 int	count_hexadecimal(unsigned long int nbr)
 {
-	unsigned int	i;  // Counter for digits
+	unsigned int	i; 
 
 	i = 1;
-	while (nbr > 15)  // While the number is greater than 15 (hexadecimal digit limit)
+	while (nbr > 15)
 	{
-		nbr = nbr / 16;  // Divide by 16 to get the next digit
-		i++;  // Increment digit count
+		nbr = nbr / 16; 
+		i++;
 	}
-	return (i);  // Return the total number of digits in hexadecimal representation
+	return (i);
 }
 
-int	ft_hexadecimal(unsigned int n, char *base, unsigned int base_len)
+// Prints the hexadecimal representation of an unsigned integer to the terminal
+
+int ft_hexadecimal(unsigned int n, char *base, unsigned int base_len)
 {
-	char	c;  // Variable to store hexadecimal digit as character
+    char c;
 
-	if (n >= base_len)  // If the number is greater than or equal to base length, recurse to print the higher digits
-		ft_hexadecimal(n / base_len, base, base_len);
-
-	c = base[n % base_len];  // Get the current digit in hexadecimal representation
-	write(1, &c, 1);  // Print the digit
-	return (count_hexadecimal(n));  // Return the total number of characters printed in hexadecimal format
+    if (n >= base_len)
+        ft_hexadecimal(n / base_len, base, base_len);
+    c = base[n % base_len];
+    write(1, &c, 1);
+    return count_hexadecimal(n);
 }
-

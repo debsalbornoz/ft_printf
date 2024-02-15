@@ -12,8 +12,9 @@
 
 #include "ft_printf.h"
 
+//Prints a character 
 int	ft_putchar(char c)
 {
-	write(1, &c, 1);  // Write the character to the standard output
+	write(1, &c, 1);
 	return (1);
 }

@@ -12,28 +12,28 @@
 
 #include "ft_printf.h"
 
+// Counts the number of digits in an unsigned integer
 int	count_unsigned(unsigned int nbr)
 {
-	unsigned int	i;  // Counter for digits
+	unsigned int	i;
 
 	i = 1;
-	while (nbr > 9)  // While the number has more than one digit
+	while (nbr > 9)
 	{
-		nbr = nbr / 10;  // Divide by 10 to remove the last digit
-		i++;  // Increment digit count
+		nbr = nbr / 10;
+		i++;
 	}
-	return (i);  // Return the total number of digits in the integer
+	return (i);
 }
 
+// Prints the digits to the terminal and returns its lenght
 int	ft_unsigned(unsigned int n)
 {
-	char	c;  // Variable to store digits as characters
+	char	c;
 
-	c = n % 10 + '0';  // Convert the last digit to a character
-	if (n >= 10)  // If the number has more than one digit, print the remaining digits recursively
-	{
+	c = n % 10 + '0';
+	if (n >= 10)
 		ft_putnbr(n / 10);
-	}
-	write(1, &c, 1);  // Print the current digit
-	return (count_unsigned(n));  // Return the total number of characters printed for the unsigned integer
+	write(1, &c, 1); 
+	return (count_unsigned(n));
 }

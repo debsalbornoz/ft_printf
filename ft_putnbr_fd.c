@@ -12,30 +12,29 @@
 
 #include "ft_printf.h"
 
+// Prints a long integer to the terminal
+
 int	ft_putnbr(long int n)
 {
-	char	c;  // Variable to store digits as characters
+	char	c; 
 
-	if (n == -2147483648)  // Handle special case for INT_MIN
+	if (n == -2147483648)  
 	{
-		write(1, "-2147483648", 11);  // Print the constant string
+		write(1, "-2147483648", 11);
 		return ;
 	}
-
-	c = n % 10 + '0';  // Convert the last digit to a character
-	if (n < 0)  // If the number is negative, print the negative sign and negate n
+	c = n % 10 + '0'; 
+	if (n < 0)
 	{
 		write(1, "-", 1);
 		n = -n;
-		c = n % 10 + '0';  // Update the character representation of the last digit
+		c = n % 10 + '0'; 
 	}
-
-	if (n >= 10)  // Recursively print the remaining digits
+	if (n >= 10)
 	{
 		ft_putnbr(n / 10);
 	}
-	
-	write(1, &c, 1);  // Print the current digit
+	write(1, &c, 1); 
 }
 
 

@@ -14,29 +14,32 @@
 
 int	ft_printf(const char *str, ...)
 {
-	va_list	args;  // Variable argument list
+	va_list	args;
 	int		len;
 	int		i;
 
 	len = 0;
 	i = 0;
-	va_start(args, str);  // Initialize variable argument list
+	// Initialize variable argument list
+	va_start(args, str); 
 	while (*str != '\0')
 	{
+		// Print and count characters based on format specifiers
 		if (*str == '%')
 		{
-			len += print_format(args, *(str + 1));  // Print and count characters based on format specifiers
+			len += print_format(args, *(str + 1)); 
 			str++;
 		}
+		// Print non-format specifier characters
 		else
 		{
-			ft_putchar(*str);  // Print non-format specifier character
+			ft_putchar(*str); 
 			i++;
 		}
 		str++;
 	}
-	len = len + i;  // Total characters printed (including non-format specifier characters)
-	va_end(args);  // End variable argument list
+	len = len + i;
+	va_end(args); 
 	return (len);
 }
 
@@ -55,7 +58,7 @@ int	print_format(va_list args, const char format)
 		len += ft_putnbr(va_arg(args, int));
 	if (format == '%')
 	{
-		ft_putchar('%');  // Print '%' character
+		ft_putchar('%');
 		len += 1;
 	}
 	if (format == 'x')
@@ -66,5 +69,6 @@ int	print_format(va_list args, const char format)
 		len += ft_putptr(va_arg(args, long long int), HEX_BASE_LOWER, 16);
 	if (format == 'u')
 		len += ft_unsigned(va_arg(args, unsigned long int));
-	return (len);  // Return the total number of characters printed for the specific format specifier
+	 // Return the total number of characters printed for the specific format specifier
+	return (len); 
 }
