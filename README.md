@@ -1,82 +1,60 @@
 <h1 align="center">Ft_printf</h1>
 
-
 <div align="center">
- <img src="https://github.com/debsalbornoz/ft_printf/assets/119970138/bfc6c2e5-126e-4048-a6c7-fa247eb75ad6">
-</div> 
+ <img src="https://github.com/debsalbornoz/ft_printf/assets/119970138/bfc6c2e5-126e-4048-a6c7-fa247eb75ad6" alt="Ft_printf logo">
+</div>
 <div align="center">
 <img alt="Static Badge" src="https://img.shields.io/badge/Status-Finished-green">
 </div>
 
-<h2>About</h2> 
+<h2>Sobre</h2>
 
-Ft_printf is a project from the 42 programming school where the printf function is recreated entirely from scratch. It is utilized to display formatted data on the standard output, typically on the console.
+O **ft_printf** é um projeto da escola de programação 42 que recria a função `printf` do zero. É utilizado para exibir dados formatados na saída padrão (terminal).
 
+A função `ft_printf` recebe uma string de formato como argumento, onde os especificadores de formato começam com `%`. Os valores correspondentes para as variáveis ou dados a serem exibidos são fornecidos após a string de formato. Essa função oferece uma variedade de especificadores de formato para inteiros, strings, caracteres, ponteiros e até mesmo números em diferentes bases, como hexadecimal, permitindo uma formatação detalhada da saída.
 
-The ft_printf function takes a format string as an argument, where format specifiers begin with %. The corresponding values for the variables or data to be displayed are provided after the format string.
+É uma ferramenta essencial para exibir informações de maneira organizada e compreensível durante a execução do programa. Amplamente utilizada para depuração, exibição de resultados e interação com o usuário, tornou-se um componente indispensável nas tarefas de programação.
 
-Furthermore, ft_printf provides a variety of format specifiers for integers, strings, characters, pointers, and even numbers in different bases, such as hexadecimal, enabling detailed formatting of the output.
+<h2>Conversões suportadas</h2>
 
-It is an essential tool for displaying information in an organized and understandable manner for users during program execution. Widely used for debugging, displaying results, and user interaction, it has become an indispensable component of programming tasks.
+| Especificador de formato | Descrição |
+| :----------------------: | :-------- |
+| %                      | Imprime um '%'. |
+| c                      | Imprime um único caractere. |
+| s                      | Imprime uma string. |
+| p                      | Imprime uma sequência de caracteres definida pela implementação que representa o endereço de um ponteiro. |
+| d ou i                 | Imprime um inteiro com sinal em representação decimal. |
+| u                      | Imprime um inteiro sem sinal em representação decimal. |
+| x ou X                  | Imprime um inteiro sem sinal em representação hexadecimal em minúsculas (x) ou maiúsculas (X). |
 
+<h2>Como usar: </h2>
 
-<h2>Supported conversions</h2>
+<h3>Requisitos:</h3>
 
+Este projeto necessita do compilador `cc`.
 
-| Format specifier  | Description |
-| :--------------:  | :------------- |
-| %                 | prints a '%'.                   |
-| c                 | prints a single character.      |
-| s                 | prints a string.                |
-| p                 | prints an implementation-defined character sequence defining a pointer address. |
-| d or i            | prints a signed integer to decimal representation.|
-| u                 | prints a unsigned integer to decimal representation. |
-| x or X            | prints a unsigned integer to hexadecimal representation in lowercase (x) or uppercase(X). |
+<h3>Instruções:</h3>
 
-<h2>Usage</h2>
+- Clone o repositório:
 
-<h3>Requirements:</h3>
+    ```bash
+    git clone https://github.com/debsalbornoz/ft_printf.git
+    ```
 
-This project needs cc compiler.
+- Para compilar a biblioteca, execute:
 
-<h3>Instructions:</h3>
+    ```bash
+    make
+    ```
 
-•Clone the repository
+- Para usar em seu código, inclua o cabeçalho:
 
-```
-git clone https://github.com/debsalbornoz/ft_printf.git
-```
+    ```c
+    #include "ft_printf.h"
+    ```
 
-•To compile the library run: "make" and to use in your code include the header
+- Compile a biblioteca junto com seu programa e execute:
 
-```
-#include "ft_printf.h"
-```
-
-•Compile the library with your program and execute
-
-```
-cc - Wall -Wextra -Werror your_program.c libftprintf.a && ./your_program
-```
-
-• Here is an simple example of how to use the function: 
-
-```
-#include "ft_printf.h"
-
-int main(void)
-{
- char test[14] = "Hello world!\n";
-
- ft_printf("%s", test);
-}
-```
-
-The output:
-
-```
-Hello world!
-```
-
-
-
+    ```bash
+    cc -Wall -Wextra -Werror seu_programa.c libftprintf.a && ./a.out
+    ```
