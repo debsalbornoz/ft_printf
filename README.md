@@ -1,60 +1,74 @@
-<h1 align="center">Ft_printf</h1>
+<h1 align="center">ft_printf</h1>
 
 <div align="center">
  <img src="https://github.com/debsalbornoz/ft_printf/assets/119970138/bfc6c2e5-126e-4048-a6c7-fa247eb75ad6" alt="Ft_printf logo">
 </div>
+
 <div align="center">
 <img alt="Static Badge" src="https://img.shields.io/badge/Status-Finished-green">
+<img alt="Static Badge" src="https://img.shields.io/badge/42-Project-blue">
+<img alt="Static Badge" src="https://img.shields.io/badge/Language-C-lightgrey">
 </div>
 
-<h2>Sobre</h2>
+## About
 
-O **ft_printf** é um projeto da escola de programação 42 que recria a função `printf` do zero. É utilizado para exibir dados formatados na saída padrão (terminal).
+**ft_printf** is a 42 School project that recreates the `printf` function entirely from scratch. It is used to display formatted data to the standard output (terminal).
 
-A função `ft_printf` recebe uma string de formato como argumento, onde os especificadores de formato começam com `%`. Os valores correspondentes para as variáveis ou dados a serem exibidos são fornecidos após a string de formato. Essa função oferece uma variedade de especificadores de formato para inteiros, strings, caracteres, ponteiros e até mesmo números em diferentes bases, como hexadecimal, permitindo uma formatação detalhada da saída.
+The `ft_printf` function takes a format string as its argument, where format specifiers begin with `%`. The corresponding values for the variables or data to be displayed are passed after the format string. This function supports a variety of format specifiers for integers, strings, characters, pointers, and even numbers in different bases such as hexadecimal, allowing for detailed control over the output formatting.
 
-É uma ferramenta essencial para exibir informações de maneira organizada e compreensível durante a execução do programa. Amplamente utilizada para depuração, exibição de resultados e interação com o usuário, tornou-se um componente indispensável nas tarefas de programação.
+It's an essential tool for displaying information in an organized and readable way during program execution. Widely used for debugging, displaying results, and interacting with the user, it's become an indispensable part of everyday C programming.
 
-<h2>Conversões suportadas</h2>
+## Table of Contents
 
-| Especificador de formato | Descrição |
-| :----------------------: | :-------- |
-| %                      | Imprime um '%'. |
-| c                      | Imprime um único caractere. |
-| s                      | Imprime uma string. |
-| p                      | Imprime uma sequência de caracteres definida pela implementação que representa o endereço de um ponteiro. |
-| d ou i                 | Imprime um inteiro com sinal em representação decimal. |
-| u                      | Imprime um inteiro sem sinal em representação decimal. |
-| x ou X                  | Imprime um inteiro sem sinal em representação hexadecimal em minúsculas (x) ou maiúsculas (X). |
+- [Supported Conversions](#supported-conversions)
+- [How to Use](#how-to-use)
+  - [Requirements](#requirements)
+  - [Instructions](#instructions)
 
-<h2>Como usar: </h2>
+## Supported Conversions
 
-<h3>Requisitos:</h3>
+| Format Specifier | Description |
+| :---------------: | :--------- |
+| `%` | Prints a `%` character. |
+| `c` | Prints a single character. |
+| `s` | Prints a string. |
+| `p` | Prints an implementation-defined character sequence representing a pointer address. |
+| `d` or `i` | Prints a signed integer in decimal representation. |
+| `u` | Prints an unsigned integer in decimal representation. |
+| `x` or `X` | Prints an unsigned integer in hexadecimal representation, lowercase (`x`) or uppercase (`X`). |
 
-Este projeto necessita do compilador `cc`.
+## How to Use
 
-<h3>Instruções:</h3>
+### Requirements
 
-- Clone o repositório:
+This project requires the `cc` compiler.
+
+### Instructions
+
+1. Clone the repository:
 
     ```bash
     git clone https://github.com/debsalbornoz/ft_printf.git
     ```
 
-- Para compilar a biblioteca, execute:
+2. Build the library:
 
     ```bash
     make
     ```
 
-- Para usar em seu código, inclua o cabeçalho:
+3. Include the header in your code:
 
     ```c
     #include "ft_printf.h"
     ```
 
-- Compile a biblioteca junto com seu programa e execute:
+4. Compile the library together with your program and run it:
 
     ```bash
-    cc -Wall -Wextra -Werror seu_programa.c libftprintf.a && ./a.out
+    cc -Wall -Wextra -Werror your_program.c libftprintf.a && ./a.out
     ```
+
+---
+
+<p align="center">Built as part of the 42 curriculum 🖥️</p>
